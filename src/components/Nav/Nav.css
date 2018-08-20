@@ -1,0 +1,10 @@
+
+nav{
+    width:85%;
+    margin:auto;
+    padding: 1rem 0;
+}
+
+.fixed-top{
+    z-index: 0;
+}

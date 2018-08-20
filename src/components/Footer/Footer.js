@@ -2,8 +2,8 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = () => (
-  <footer className="footer">
-    <span>Pupster 2017</span>
+  <footer>
+      <p className="text-center m-0 p-2 w-100 bg-dark text-light">© 2018 Arize</p>
   </footer>
 );
 

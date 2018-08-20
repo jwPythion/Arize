@@ -5,7 +5,7 @@ import Jumbotron from "../../components/Jumbotron";
 const Main = () => (
   <Container fluid>
     <Row>
-      <Col size="md-12">
+      <Col size="md-8" spacing="mt-4">
         <Jumbotron>
           <h1>This is the Main Page</h1>
           <h1>
