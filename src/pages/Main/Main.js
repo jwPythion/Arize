@@ -1,22 +1,21 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
+import { BgImage, Container } from '../../components/Main';
+import Quote from '../../components/Main/Quote';
+import './Main.css';
 
 const Main = () => (
-  <Container fluid>
-    <Row>
-      <Col size="md-8" spacing="mt-4">
-        <Jumbotron>
-          <h1>This is the Main Page</h1>
-          <h1>
-            <span role="img" aria-label="Person Raising Hand">
-            🙋‍♀️
-            </span>
-          </h1>
-        </Jumbotron>
-      </Col>
-    </Row>
-  </Container>
+  <div>
+    <Quote />
+    <Container>
+      <h1 className="text-center py-5 mt-4">Main Index</h1>
+      <a className="btn btn-danger hvr-ripple-out mx-2">Ripple Out</a>
+      <a className="btn btn-warning hvr-ripple-out mx-2">Ripple Out</a>
+      <a className="btn btn-primary hvr-ripple-out mx-2">Ripple Out</a>
+      <a className="btn btn-success hvr-ripple-out mx-2">Ripple Out</a>
+
+    </Container>
+    <BgImage />
+  </div>
 );
 
 export default Main;
