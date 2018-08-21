@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 const mongoose = require('mongoose');
 const morgan = require('morgan'); // used to see requests
+const axios = require('axios');
 const app = express();
 const db = require('./models');
 const PORT = process.env.PORT || 3001;
@@ -65,6 +66,14 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
       res.status(404).send({success: false, message: 'No user found'});
     }
   }).catch(err => res.status(400).send(err));
+});
+
+app.post('/api/proxy/events', (req, res) => {
+  const APIKEY = '&app_key=8wRLTx4G85vqVdQW';
+  const baseURL = 'http://api.eventful.com/json/events/search?';
+  axios.get(baseURL + `q=${req.body.event}` + APIKEY)
+    .then(resp => res.json(resp.data))
+    .catch(err => res.status(400).json(err));
 });
 
 // Serve up static assets (usually on heroku)
