@@ -15,6 +15,8 @@ const MyCalendar = props => (
   <div>
     <BigCalendar
       events={events}
+      step={60}
+      timeslots={8}
       startAccessor='start'
       endAccessor='end'
       style={{ height: "100vh" }}

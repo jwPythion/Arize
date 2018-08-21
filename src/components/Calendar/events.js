@@ -1,16 +1,17 @@
+import moment from 'moment';
+
 export default [
     {
       id: 0,
-      title: 'All Day Event very long title',
-      allDay: true,
-      start: new Date(2018, 3, 0),
-      end: new Date(2018, 3, 1),
+      title: 'Golf Club',
+      start: new Date(new Date(2018, 7, 24).setHours(12)),
+      end: new Date(new Date(2018, 7, 24).setHours(16)),
     },
     {
       id: 1,
-      title: 'Long Event',
-      start: new Date(2018, 3, 7),
-      end: new Date(2018, 3, 10),
+      title: 'Lunch with Suzie @ 12:00pm',
+      start: new Date(2018, 7, 9),
+      end: new Date(2018, 7, 10),
     },
   
     {
@@ -29,15 +30,15 @@ export default [
   
     {
       id: 4,
-      title: 'Some Event',
-      start: new Date(2018, 3, 9, 0, 0, 0),
-      end: new Date(2018, 3, 10, 0, 0, 0),
+      title: 'Craft Night',
+      start: new Date(2018, 7, 9, 0, 0, 0),
+      end: new Date(2018, 7, 10, 0, 0, 0),
     },
     {
       id: 5,
-      title: 'Conference',
-      start: new Date(2018, 3, 11),
-      end: new Date(2018, 3, 13),
+      title: 'Jakes Birthday Party',
+      start: new Date(2018, 8, 11),
+      end: new Date(2018, 8, 13),
       desc: 'Big conference for important people',
     },
     {
@@ -99,7 +100,7 @@ export default [
     },
     {
       id: 14,
-      title: 'Event for today',
+      title: 'Doctor Appointment',
       start: new Date(new Date().setHours(new Date().getHours() - 3)),
       end: new Date(new Date().setHours(new Date().getHours() + 3)),
     },
