@@ -67,7 +67,6 @@ class Events extends Component {
                         </div>
                         {/* <div className="card-body">{this.state.result}</div> */}
                     </div>
-
                 </Row>
             </Container>
         )
