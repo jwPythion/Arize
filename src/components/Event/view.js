@@ -1,0 +1,27 @@
+export default [
+    {
+      event: ReactClass<any>,
+      eventWrapper: ReactClass<any>,
+      dayWrapper: ReactClass<any>,
+      dateCellWrapper: ReactClass<any>,
+      toolbar: ReactClass<any>,
+      agenda: {
+        date: ReactClass<any>,
+        time: ReactClass<any>,
+        event: ReactClass<any>
+      },
+      day?: {
+        header: ReactClass<any>,
+        event: ReactClass<any>
+      },
+      week?: {
+        header?: ReactClass<any>,
+        event?: ReactClass<any>
+      },
+      month?: {
+        header?: ReactClass<any>,
+        dateHeader?: ReactClass<any>,
+        event?: ReactClass<any>
+      }
+    }
+  ]
