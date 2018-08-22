@@ -6,14 +6,16 @@ import API from "../../utils/API";
 class Events extends Component {
 
     state = {
-        result: {},
+        result: [],
         search: ""
     };
 
     searchEvents = (eventType) => {
         API.getEvent(eventType)
-            .then(res => this.setState({ result: res.data }))
+        
+            .then(res => this.setState({ result: res.data.events.event }))
             .catch(err => console.log(err));
+            
     };
 
     handleInputChange = event => {
@@ -61,12 +63,13 @@ class Events extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <div className="card text-center">
-                        <div className="card-header">
-                            <h2>{this.state.result.events}</h2>
-                        </div>
-                        {/* <div className="card-body">{this.state.result}</div> */}
-                    </div>
+                        {this.state.result.map(event => {
+                           return( <div className="card text-center">
+                            <div className="card-header">
+                           <h2 key={event.id}>{event.title}</h2>
+                            <div className="card-body">{event.description}</div> 
+                          </div>
+                        </div> )})}
                 </Row>
             </Container>
         )
