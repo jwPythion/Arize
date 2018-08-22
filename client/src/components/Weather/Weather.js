@@ -6,18 +6,24 @@ class Weather extends Component {
 
     state = {
         city: "",
-        forecastResults: {}
+        title: "",
+        forecast: []
     }
 
     componentDidMount() {
         API.getWeatherFromYahoo("San Diego")
             .then(res => {
-                console.log(res.data.query.results.channel.item);
-                this.setState({
-                    forecastResults: res.data.query.results.channel.item
-                });
+                // console.log(res.data.query.results.channel.item);
+                let title = res.data.query.results.channel.item.title;
+                let forecast = res.data.query.results.channel.item.forecast;
 
-                console.log(this.state.forecastResults);
+                // console.log(res.data.query.results.channel.item.description)
+                this.setState({
+                    title: title,
+                    forecast: forecast
+                });
+                console.log(this.state);
+                // console.log(this.state.forecastDescription);
             })
     }
 
@@ -68,9 +74,16 @@ class Weather extends Component {
                 </nav>
                 <div className="container">
                     <div className="jumbotron">
-                        <h2>{this.state.forecastResults.title}</h2>
-                        <div id="forecast" className="row">
-                            {/* {this.state.forecast} */}
+                        <h2>{this.state.title}</h2>
+                        <div className="row">
+                            {this.state.forecast.map(item => (
+                                <div className="col-md-4 forecast-card">
+                                    <p>{item.day}, {item.date}</p>
+                                    <p>{item.text}</p>
+                                    <p>High: {item.high}</p>
+                                    <p>Low: {item.low}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

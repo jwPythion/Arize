@@ -20,4 +20,8 @@ h2 {
     color: dodgerblue;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-};
+}
+
+.forecast-card {
+    border: 1px solid #000;
+}
