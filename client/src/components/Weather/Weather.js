@@ -5,26 +5,25 @@ import API from "../../utils/API";
 class Weather extends Component {
 
     state = {
-        city: "",
+        city: "San Diego",
         title: "",
         forecast: []
     }
 
     componentDidMount() {
-        API.getWeatherFromYahoo("San Diego")
+       this.getWeather();
+    }
+
+    getWeather = () => {
+        API.getWeatherFromYahoo(this.state.city)
             .then(res => {
-                // console.log(res.data.query.results.channel.item);
                 let title = res.data.query.results.channel.item.title;
                 let forecast = res.data.query.results.channel.item.forecast;
-
-                // console.log(res.data.query.results.channel.item.description)
                 this.setState({
                     title: title,
                     forecast: forecast
                 });
-                console.log(this.state);
-                // console.log(this.state.forecastDescription);
-            })
+            }).catch(err => console.log(err));
     }
 
     handleFormInput = event => {
@@ -34,9 +33,9 @@ class Weather extends Component {
         });
     }
 
-    getWeather = (event) => {
+    handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.city);
+        this.getWeather();
     }
 
     render() {
@@ -52,7 +51,7 @@ class Weather extends Component {
                             <form
                                 className="navbar-form navbar-right"
                                 role="search"
-                                onSubmit={this.getWeather}
+                                onSubmit={this.handleFormSubmit}
                             >
                                 <div className="form-group">
                                     <input
