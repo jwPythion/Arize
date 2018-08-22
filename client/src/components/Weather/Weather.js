@@ -1,10 +1,24 @@
 import React, { Component } from "react";
 import "./Weather.css";
+import API from "../../utils/API";
 
 class Weather extends Component {
 
     state = {
-        city: ""
+        city: "",
+        forecastResults: {}
+    }
+
+    componentDidMount() {
+        API.getWeatherFromYahoo("San Diego")
+            .then(res => {
+                console.log(res.data.query.results.channel.item);
+                this.setState({
+                    forecastResults: res.data.query.results.channel.item
+                });
+
+                console.log(this.state.forecastResults);
+            })
     }
 
     handleFormInput = event => {
@@ -53,8 +67,12 @@ class Weather extends Component {
                     </div>
                 </nav>
                 <div className="container">
-                    <div className="jumbotron" />
-                    <div id="forecast" className="row" />
+                    <div className="jumbotron">
+                        <h2>{this.state.forecastResults.title}</h2>
+                        <div id="forecast" className="row">
+                            {/* {this.state.forecast} */}
+                        </div>
+                    </div>
                 </div>
             </div>
         )

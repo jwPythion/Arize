@@ -11,5 +11,8 @@ export default {
   },
   getEvent: (eventType) => {
     return axios.post("/api/proxy/events", {"event": eventType})
+  },
+  getWeatherFromYahoo: (query) => {
+    return axios.post("/api/proxy/weather", {"query": query});
   }
 };
