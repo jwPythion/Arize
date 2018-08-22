@@ -14,6 +14,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Events from './components/Events/Events';
+import MyCalendar from './components/Calendar/Calendar';
 
 if(localStorage.getItem("id_token")) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
@@ -26,6 +27,7 @@ ReactDOM.render(
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile/:id" component={Profile} />
             <Route exact path="/events" component={Events} />
+            <Route exact path="/calendar" component={MyCalendar} />
             <Route exact path="/" component={Main} />
            
         </div>
