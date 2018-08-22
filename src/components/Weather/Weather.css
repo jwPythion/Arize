@@ -1,0 +1,23 @@
+
+
+.brand 
+{
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    color: dodgerblue;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+h2 {
+    color: dodgerblue;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+};
