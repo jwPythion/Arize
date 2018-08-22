@@ -28,7 +28,6 @@ ReactDOM.render(
       <Nav />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/user/:id" component={User} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profile/:id" component={Profile} />

@@ -29,18 +29,19 @@ const Main = () => (
             <img className="img-fluid" src="/assets/img/groups-icon1.png" alt="groups button" />
           </a>
         </div>
+
         <div className="col-lg-4 col-sm-6 pb-3">
           <a className="btn btn-info hvr-ripple-out mx-2">
             <img className="img-fluid" src="/assets/img/reminder-icon.png" alt="reminder button" />
           </a>
         </div>
         
-        
         <div className="col-lg-4 col-sm-6 pb-3">
           <a className="btn btn-success hvr-ripple-out mx-2">
             <img className="img-fluid" src="/assets/img/calendar-icon.png" alt="calendar button" />
           </a>
         </div>
+        
         <div className="col-lg-4 col-sm-6 pb-3">
           <a className="btn btn-danger hvr-ripple-out mx-2">
             <img className="img-fluid" src="/assets/img/todolist-icon.png" alt="todolist button" />
