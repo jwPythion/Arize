@@ -21,17 +21,21 @@ body{
 
 .hvr-ripple-out:before {
   animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
-.btn-danger.hvr-ripple-out:before {
+.btn-danger.hvr-ripple-out:before, .btn-danger:hover {
   border-color: #dc3545;
 }
-.btn-warning.hvr-ripple-out:before {
+.btn-warning.hvr-ripple-out:before, .btn-warning:hover {
   border-color: #ffc107;
 }
-.btn-primary.hvr-ripple-out:before {
+.btn-primary.hvr-ripple-out:before, .btn-primary:hover {
   border-color: #007bff;
 }
-.btn-success.hvr-ripple-out:before {
+.btn-success.hvr-ripple-out:before, .btn-success:hover {
   border-color: #28a745;
+}
+.btn-info.hvr-ripple-out:before, .btn-info:hover {
+  border-color: #17a2b8;
 }
