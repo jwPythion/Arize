@@ -1,0 +1,32 @@
+label {
+    color: white;
+    margin-left: 32%;
+}
+
+.card.text-center {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin: 0 auto;
+    justify-content: center;
+    width: 35%;
+}
+
+.btn {
+    margin-left: 47%;
+}
+
+.container-fluid {
+    background-image: url("https://assets.visitphilly.com/wp-content/uploads/2018/02/Opera-Philadelphia-Academy-of-Music-Interior-2200x1237.jpg");
+}
+
+.jumbotron {
+    background: 0;
+}
+
+h1 {
+    font-size: 45pt;
+    color: white;
+}

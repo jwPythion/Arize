@@ -9,7 +9,7 @@ export default {
   signUpUser: (username, email, password) => {
     return axios.post('/api/signup', {username: username, email: email, password: password});
   },
-  getEvent: (eventType) => {
-    return axios.post("/api/proxy/events", {"event": eventType})
+  getEvent: (eventType, location) => {
+    return axios.post("/api/proxy/events", {"event": eventType, "location": location})
   }
 };
