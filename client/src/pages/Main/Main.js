@@ -12,31 +12,39 @@ class Main extends Component {
     super();
     this.Auth = new AuthService();
   }
- 
+
   state = {
-    classes: ""
+    nav: "nav-fade",
+    quote: true,
+    bg: "bg-fade",
+    main: "main-scale-up"
   }
 
   componentDidMount() {
+    if (sessionStorage.getItem('playIntro')) {
+      this.setState({
+        nav: "",
+        quote: false,
+        bg: "",
+        main: ""
+      })
+    }
+
+    sessionStorage.setItem('playIntro', { val: 'playIntro' });
+
+    //
     if (!this.Auth.loggedIn()) {
       this.props.history.replace('/welcome');
-    } else {
-      setTimeout(
-        function () {
-          this.setState({ classes: "d-none" });
-        }
-          .bind(this),
-        15000
-      );
     }
+
   }
 
   render() {
     return (
       <div>
-        <Nav ani="nav-fade" />
-        <Quote classes={this.state.classes}/>
-        <Container>
+        <Nav ani={this.state.nav} />
+        {(this.state.quote) ? <Quote /> : ''}
+        <Container classes={this.state.main}>
           <h1 className="main-title-text text-center pt-5 mt-3">Welcome</h1>
           <h2 className="text-center pb-5">What would you like to do today?</h2>
 
@@ -75,7 +83,7 @@ class Main extends Component {
 
           </Row>
         </Container>
-        <BgImage ani="bg-fade" />
+        <BgImage ani={this.state.bg} />
       </div>
     )
   }
