@@ -6,8 +6,8 @@ export default {
     return axios.get(`/api/user/${id}`);
   },
   // sign up a user to our service
-  signUpUser: (first, last, email, password, location) => {
-    return axios.post('/api/signup', {first: first, last:last, email: email, password: password, location:location});
+  signUpUser: (first, last, email, password, location, img) => {
+    return axios.post('/api/signup', {first: first, last:last, email: email, password: password, location:location, img:img});
   },
   getEvent: (eventType, location) => {
     return axios.post("/api/proxy/events", {"event": eventType, "location": location})
