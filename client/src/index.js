@@ -18,6 +18,7 @@ import Events from './components/Events/Events';
 if(localStorage.getItem("id_token")) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
 }
+
 ReactDOM.render(
     <Router>
         <div>

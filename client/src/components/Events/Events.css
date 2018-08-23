@@ -30,3 +30,8 @@ h1 {
     font-size: 45pt;
     color: white;
 }
+
+.card-body {
+    display: flex;
+    flex-direction: row-reverse;
+}

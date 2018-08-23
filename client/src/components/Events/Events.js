@@ -65,7 +65,7 @@ class Events extends Component {
                                 <br />
                                 <button
                                     onClick={this.handleFormSubmit}
-                                    className="btn btn-primary"
+                                    className="btn btn-light"
                                 >Search</button>
                             </div>
                         </form>
@@ -76,7 +76,7 @@ class Events extends Component {
                     {this.state.result.map(event => {
                         return (<div className="card text-center">
                             <div className="card-header">
-                                <h2 key={event.id}>Event Title: {event.title}</h2>
+                                <h2 key={event.id}>{event.title}</h2>
                             </div>
                             <div className="card-body">
                                 <Col size="md-4">
