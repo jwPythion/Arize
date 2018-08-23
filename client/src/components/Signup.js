@@ -14,11 +14,12 @@ class Signup extends Component {
   }
 
   state = {
-    first: null,
-    last: null,
-    email: null,
-    password: null,
-    location: null
+    first: "",
+    last: "",
+    email: "",
+    password: "",
+    location: "",
+    img:""
   }
 
   componentWillMount() {
@@ -29,7 +30,7 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password)
+    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password, this.state.location, this.state.img)
       .then(res => {
         console.log(res.data);
         // once the user has signed up
@@ -91,6 +92,14 @@ class Signup extends Component {
               name="password"
               label="Password:"
               type="password"
+            />
+            <Input
+              value={this.state.img}
+              onChange={this.handleChange}
+              name="img"
+              label="Image URL:"
+              type="text"
+              placeholder="http://"
             />
             <Input
               value={this.state.location}
