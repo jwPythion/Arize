@@ -19,7 +19,6 @@ class Signup extends Component {
     email: null,
     password: null,
     location: null
-
   }
 
   componentWillMount() {
@@ -104,7 +103,7 @@ class Signup extends Component {
               disabled={!(this.state.first && this.state.last && this.state.email && this.state.password)}
               onClick={this.handleFormSubmit}
             >
-              Submit Book
+              Submit
               </FormBtn>
           </form>
         </Container>

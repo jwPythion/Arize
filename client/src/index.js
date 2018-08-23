@@ -18,7 +18,6 @@ import Signup from './components/Signup';
 import Events from './components/Events/Events';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
-import { BgImage, Container } from './components/Main';
 
 if (localStorage.getItem("id_token")) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
