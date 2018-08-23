@@ -71,7 +71,7 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
 app.post('/api/proxy/events', (req, res) => {
   const APIKEY = '&app_key=8wRLTx4G85vqVdQW';
   const baseURL = 'http://api.eventful.com/json/events/search?';
-  axios.get(baseURL + `q=${req.body.event}` + APIKEY)
+  axios.get(baseURL + `q=${req.body.event}&l=${req.body.location}` + APIKEY)
     .then(resp => res.json(resp.data))
     .catch(err => res.status(400).json(err));
 });

@@ -11,7 +11,7 @@ class Weather extends Component {
     }
 
     componentDidMount() {
-       this.getWeather();
+        this.getWeather();
     }
 
     getWeather = () => {
@@ -27,7 +27,7 @@ class Weather extends Component {
     }
 
     handleFormInput = event => {
-        const {name, value} = event.target;
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         });
@@ -40,54 +40,49 @@ class Weather extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Retirement Environment Weather Environment</h1>
-                <nav className="navbar navbar-default">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                        </div>
-                        <div
+            <div className="weatherMod">
+                <div>
+                    <h1>Weather Module</h1>
+                    <nav className="navbar navbar-default d-flex justify-content-end w-100 mt-5 mr-5" id="modForm">
+                        <form className="form-inline"
+                            role="search"
+                            onSubmit={this.handleFormSubmit}
                         >
-                            <form
-                                className="navbar-form navbar-right"
-                                role="search"
-                                onSubmit={this.handleFormSubmit}
-                            >
-                                <div className="form-group">
-                                    <input
-                                        id="city"
-                                        name="city"
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="Enter City"
-                                        value={this.state.city}
-                                        onChange={this.handleFormInput}
-                                    />
-                                </div>
-                                <button type="submit" className="btn btn-default">
-                                    Get Forecast
+                            <div className="form-group">
+                                <input
+                                    id="city"
+                                    name="city"
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Enter City"
+                                    value={this.state.city}
+                                    onChange={this.handleFormInput}
+                                />
+                            </div>
+                            <button type="submit" className="btn btn-default">
+                                Get Forecast
                                 </button>
-                            </form>
+                        </form>
+
+                    </nav>
+                    <div className="container">
+                        <div className="jumbotron">
+                            <h2>{this.state.title}</h2>
+                            <div className="row">
+                                {this.state.forecast.map(item => (
+                                    <div className="col-md-4 forecast-card">
+                                        <p>{item.day}, {item.date}</p>
+                                        <p>{item.text}</p>
+                                        <p>High: {item.high}</p>
+                                        <p>Low: {item.low}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </nav>
-                <div className="container">
-                    <div className="jumbotron">
-                        <h2>{this.state.title}</h2>
-                        <div className="row">
-                            {this.state.forecast.map(item => (
-                                <div className="col-md-4 forecast-card">
-                                    <p>{item.day}, {item.date}</p>
-                                    <p>{item.text}</p>
-                                    <p>High: {item.high}</p>
-                                    <p>Low: {item.low}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+
                 </div>
-            </div>
-        )
+            </div>)
     }
 }
 
