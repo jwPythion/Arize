@@ -33,6 +33,7 @@ class Events extends Component {
 
     render() {
         return (
+            <div className="events">
             <Container fluid>
                 <Row>
                     <Col size="md-12">
@@ -95,6 +96,7 @@ class Events extends Component {
                     })}
                 </Row>
             </Container>
+            </div>
         )
     }
 };

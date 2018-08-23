@@ -1,37 +1,37 @@
-label {
+.events label {
     color: white;
     margin-left: 32%;
 }
 
-.card.text-center {
+.events .card.text-center {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.form-control {
+.events .form-control {
     margin: 0 auto;
     justify-content: center;
     width: 35%;
 }
 
-.btn {
+.events .btn {
     margin-left: 47%;
 }
 
-.container-fluid {
+.events .container-fluid {
     background-image: url("https://assets.visitphilly.com/wp-content/uploads/2018/02/Opera-Philadelphia-Academy-of-Music-Interior-2200x1237.jpg");
 }
 
-.jumbotron {
+.events .jumbotron {
     background: 0;
 }
 
-h1 {
+.events h1 {
     font-size: 45pt;
     color: white;
 }
 
-.card-body {
+.events .card-body {
     display: flex;
     flex-direction: row-reverse;
 }
