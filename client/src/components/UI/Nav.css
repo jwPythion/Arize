@@ -1,0 +1,28 @@
+.navbar{
+    position:absolute;
+    top:0;
+    z-index: 15;
+}
+
+.navbar-brand{
+    color:rgba(0,0,0,.75)!important;
+    font-size: 4.5rem!important;
+    padding:0;
+    margin:0;
+}
+
+.nav-fade{
+  opacity:0;
+  animation: fadeInConst 1s ease-in 1;
+  animation-fill-mode: forwards;
+  animation-delay: 11s;
+}
+
+@keyframes fadeInConst {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }

@@ -6,10 +6,14 @@ export default {
     return axios.get(`/api/user/${id}`);
   },
   // sign up a user to our service
-  signUpUser: (username, email, password) => {
-    return axios.post('/api/signup', {username: username, email: email, password: password});
+  signUpUser: (first, last, email, password, location) => {
+    return axios.post('/api/signup', {first: first, last:last, email: email, password: password, location:location});
   },
-  getEvent: (eventType) => {
-    return axios.post("/api/proxy/events", {"event": eventType})
+  getEvent: (eventType, location) => {
+    return axios.post("/api/proxy/events", {"event": eventType, "location": location})
+  // Deletes the user with the given id
+  },
+  deleteUser: (id) => {
+    return axios.delete(`/api/user/${id}`);
   }
 };
