@@ -9,11 +9,11 @@ export default {
   signUpUser: (first, last, email, password, location) => {
     return axios.post('/api/signup', {first: first, last:last, email: email, password: password, location:location});
   },
-  getEvent: (eventType) => {
-    return axios.post("/api/proxy/events", {"event": eventType})
-  },
+  getEvent: (eventType, location) => {
+    return axios.post("/api/proxy/events", {"event": eventType, "location": location})
   // Deletes the user with the given id
-  deleteUser: function(id) {
+  },
+  deleteUser: (id) => {
     return axios.delete(`/api/user/${id}`);
   }
 };
