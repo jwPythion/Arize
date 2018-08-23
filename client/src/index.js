@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
-import App from './App';
 import Main from "./pages/Main";
-import User from "./pages/User";
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 
@@ -19,7 +17,6 @@ import Signup from './components/Signup';
 import Events from './components/Events/Events';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
-import { BgImage, Container } from './components/Main';
 import Weather from './components/Weather';
 
 if (localStorage.getItem("id_token")) {
