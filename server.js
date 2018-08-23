@@ -76,6 +76,12 @@ app.post('/api/proxy/events', (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+app.post('/api/proxy/weather', (req, res) => {
+  axios.get(`https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${req.body.query}")&format=json`)
+    .then(resp => res.json(resp.data))
+    .catch(err => res.status(400).json(err));
+});
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

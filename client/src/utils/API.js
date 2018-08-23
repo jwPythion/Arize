@@ -15,5 +15,8 @@ export default {
   },
   deleteUser: (id) => {
     return axios.delete(`/api/user/${id}`);
+  },
+  getWeatherFromYahoo: (query) => {
+    return axios.post("/api/proxy/weather", {"query": query});
   }
 };
