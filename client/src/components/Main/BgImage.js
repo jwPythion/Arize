@@ -12,11 +12,9 @@ var divStyle = {
     backgroundColor:"#000"
 };
 
-export const BgImage = () => (
+export const BgImage = ({ani}) => (
 
-    <div className="bg-image">
+    <div className={`bg-image ${ani}`}>
         <div style={divStyle}></div>
     </div>
 );
-
-export default BgImage;

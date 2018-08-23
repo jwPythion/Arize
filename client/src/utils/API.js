@@ -11,5 +11,9 @@ export default {
   },
   getEvent: (eventType) => {
     return axios.post("/api/proxy/events", {"event": eventType})
+  },
+  // Deletes the user with the given id
+  deleteUser: function(id) {
+    return axios.delete(`/api/user/${id}`);
   }
 };

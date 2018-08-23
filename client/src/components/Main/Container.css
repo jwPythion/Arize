@@ -6,7 +6,7 @@
     width: 100%;
     height:100%;
     transform: scaleY(0.0);
-    animation: scaleUp 1s ease-in 1;
+    animation: scaleUp .75s ease-in-out 1;
     animation-fill-mode: forwards;
     animation-delay: 11s;
 }
@@ -22,9 +22,11 @@
 }
 @keyframes scaleUp {
     0% {
+        opacity:0;
         transform: scaleY(0.0);
     }
     100% {
+        opacity:1;
         transform: scaleY(1.0);
     }
 }

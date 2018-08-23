@@ -2,9 +2,7 @@ import React, {Component} from "react";
 import './Quote.css';
 import quotes from '../../quotes.json';
 
-const rnd = Math.floor(Math.random() * quotes.length - 1) + 1;
-console.log(rnd);
-const quote = quotes[rnd];
+const quote = quotes[Math.floor(Math.random() * quotes.length - 1) + 1];
 
 class Quote extends Component {
 
