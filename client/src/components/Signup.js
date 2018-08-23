@@ -1,12 +1,25 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AuthService from './AuthService';
+import { Input, FormBtn } from '../components/Form';
+import { Container } from '../components/Grid';
+import { BgImage } from '../components/Main';
+import { BackBtn } from '../components/UI';
 import API from '../utils/API';
 
 class Signup extends Component {
   constructor() {
     super();
     this.Auth = new AuthService();
+  }
+
+  state = {
+    first: null,
+    last: null,
+    email: null,
+    password: null,
+    location: null
+
   }
 
   componentWillMount() {
@@ -17,7 +30,7 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.username, this.state.email, this.state.password)
+    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password)
       .then(res => {
         console.log(res.data);
         // once the user has signed up
@@ -28,7 +41,7 @@ class Signup extends Component {
   };
 
   handleChange = event => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -36,40 +49,66 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
+        <Container fluid>
+          <BackBtn />
+          <div className="card text-center p-4">
+            <h1 className="card-title pl-4 mb-0"><strong>INTAKE FORM</strong></h1>
+            <div className="card-body">
+              <Link to="/login">
+                <button className="btn btn-outline-info mr-sm-2">GO TO LOGIN</button>
+              </Link>
+            </div>
+          </div>
 
-        <h1>Signup</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input className="form-control"
-                   placeholder="Username goes here..."
-                   name="username"
-                   type="text"
-                   id="username"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email address:</label>
-            <input className="form-control"
-                   placeholder="Email goes here..."
-                   name="email"
-                   type="email"
-                   id="email"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input className="form-control"
-                   placeholder="Password goes here..."
-                   name="password"
-                   type="password"
-                   id="pwd"
-                   onChange={this.handleChange}/>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-        <p><Link to="/login">Go to Login</Link></p>
+          <form className="profile-row bg-light p-5">
+            <Input
+              value={this.state.first}
+              onChange={this.handleChange}
+              name="first"
+              label="First Name:"
+              type="text"
+              placeholder="John"
+            />
+            <Input
+              value={this.state.last}
+              onChange={this.handleChange}
+              name="last"
+              label="Last Name:"
+              type="text"
+              placeholder="Doe"
+            />
+            <Input
+              value={this.state.email}
+              onChange={this.handleChange}
+              name="email"
+              label="Email Address:"
+              type="text"
+              placeholder="example@mail.com"
+            />
+            <Input
+              value={this.state.password}
+              onChange={this.handleChange}
+              name="password"
+              label="Password:"
+              type="password"
+            />
+            <Input
+              value={this.state.location}
+              onChange={this.handleChange}
+              name="location"
+              label="Location:"
+              type="text"
+            />
+            <FormBtn
+              disabled={!(this.state.first && this.state.last && this.state.email && this.state.password)}
+              onClick={this.handleFormSubmit}
+            >
+              Submit Book
+              </FormBtn>
+          </form>
+        </Container>
+        <BgImage />
       </div>
     );
   }

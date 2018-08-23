@@ -24,12 +24,6 @@ if (localStorage.getItem("id_token")) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
 }
 
-let visits = 0;
-
-const visitHandler = () => {
-    visits += 1;
-}
-
 ReactDOM.render(
     <Router>
         <Wrapper>
