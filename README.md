@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 # Arize
 # Create React Express App
-=======
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
->>>>>>> 891283b02e3510552e43bb50ce366d092df7fbd9
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
@@ -2446,8 +2443,4 @@ In the future, we might start automatically compiling incompatible third-party m
 
 ## Something Missing?
 
-<<<<<<< HEAD
-If all previous steps were followed correctly, your application should be deployed to Heroku!
-=======
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
->>>>>>> 891283b02e3510552e43bb50ce366d092df7fbd9

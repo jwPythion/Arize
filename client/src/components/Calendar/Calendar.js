@@ -10,7 +10,7 @@ import "./Calendar.css";
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const MyCalendar = props => {
- return( <div>
+ return( <div className="calendar">
     <BigCalendar
       events={myEvents}
       step={60}
