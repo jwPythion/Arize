@@ -46,7 +46,7 @@ class Nav extends Component {
                 <nav className={`navbar navbar-light w-100 px-5 ${this.state.ani}`}>
                     <Link to={"/"}>
                         <a className="navbar-brand">
-                            <i className="far fa-image"></i>
+                            <img src="/assets/img/logo.png" className="img-fluid logo" alt="logo"/>
                         </a>
                     </Link>
                     <ul className="navbar-nav">
