@@ -5,6 +5,7 @@ import { Container, Row, Col } from '../Grid';
 import { Input, FormBtn } from '../Form';
 import { BgImage } from '../Main';
 import { BackBtn } from '../UI';
+import {Icon} from './Icons';
 import "./Weather.css";
 
 class Weather extends Component {
@@ -82,6 +83,7 @@ class Weather extends Component {
                                 <div className="card">
                                     <div className="card-header">{item.day}, {item.date}</div>
                                     <div className="card-body">
+                                        <Icon cast={item.text} />
                                         <p>{item.text}</p>
                                     </div>
                                     <div className="card-footer">
