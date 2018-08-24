@@ -35,3 +35,15 @@
     display: flex;
     flex-direction: row-reverse;
 }
+
+.events .loading {
+    width: 55px;
+    height: 35px;
+    margin-left: 47.5%;
+    margin-top: 15px;
+}
+
+.events .loadingIcon {
+    margin: 0 auto;
+    justify-content: center;
+}

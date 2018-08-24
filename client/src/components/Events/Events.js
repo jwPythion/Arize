@@ -11,7 +11,8 @@ class Events extends Component {
     state = {
         result: [],
         search: "",
-        location: ""
+        location: "",
+        loading: false
     };
 
     searchEvents = (eventType, location) => {
@@ -31,6 +32,14 @@ class Events extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.searchEvents(this.state.search, this.state.location);
+        this.setState({
+            loading: true
+        })
+        setTimeout( () => {
+            this.setState({
+                loading: false
+            })
+        }, 3000)
     };
 
     render() {
@@ -71,6 +80,9 @@ class Events extends Component {
                                     onClick={this.handleFormSubmit}
                                     className="btn btn-light"
                                 >Search</button>
+                                <div className="loadingIcon">
+                                   {this.state.loading ? <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="loadingimg" className="loading"/> : <p></p>}
+                                </div> 
                             </div>
                         </form>
 
