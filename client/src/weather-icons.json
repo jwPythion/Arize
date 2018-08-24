@@ -38,5 +38,10 @@
         "id": 8,
         "name": "snow",
         "icon": "/assets/img/snow.png"
+    },
+    {
+        "id": 9,
+        "name": "not found",
+        "icon": "/assets/img/not-found.png"
     }
 ]
