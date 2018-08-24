@@ -9,7 +9,7 @@ class Quote extends Component {
     state = {
         classes: ""
     }
-
+ 
     componentDidMount() {
         setTimeout(
             function() {

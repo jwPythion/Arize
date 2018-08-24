@@ -4,29 +4,38 @@ import { Nav } from '../../components/UI';
 import { Row, Col } from '../../components/Grid'
 import { BgImage, Container, IndexBtn } from '../../components/Main';
 import Quote from '../../components/Main/Quote';
+import AuthService from '../../components/AuthService';
 import './Main.css';
 
 class Main extends Component {
-
+  constructor() {
+    super();
+    this.Auth = new AuthService();
+  }
+ 
   state = {
     classes: ""
   }
 
   componentDidMount() {
-    setTimeout(
-      function () {
-        this.setState({ classes: "d-none" });
-      }
-        .bind(this),
-      15000
-    );
+    if (!this.Auth.loggedIn()) {
+      this.props.history.replace('/welcome');
+    } else {
+      setTimeout(
+        function () {
+          this.setState({ classes: "d-none" });
+        }
+          .bind(this),
+        15000
+      );
+    }
   }
 
   render() {
     return (
       <div>
         <Nav ani="nav-fade" />
-        <Quote />
+        <Quote classes={this.state.classes}/>
         <Container>
           <h1 className="main-title-text text-center pt-5 mt-3">Welcome</h1>
           <h2 className="text-center pb-5">What would you like to do today?</h2>
