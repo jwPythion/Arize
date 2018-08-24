@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from '../Grid';
+import { Input, FormBtn } from '../Form';
+import { BgImage } from '../Main';
+import { BackBtn } from '../UI';
 import API from "../../utils/API";
 import withAuth from '../withAuth';
 import "./Weather.css";
@@ -12,7 +16,13 @@ class Weather extends Component {
     }
 
     componentDidMount() {
-        this.getWeather();
+        API.getUser(this.props.user.id)
+            .then(res => {
+                this.setState({
+                    city: res.data.location
+                });
+                this.getWeather();
+            });
     }
 
     getWeather = () => {
@@ -41,48 +51,52 @@ class Weather extends Component {
 
     render() {
         return (
-            <div className="weatherMod">
-                <div>
-                    <h1>Weather Module</h1>
-                    <nav className="navbar navbar-default d-flex justify-content-end w-100 mt-5 mr-5" id="modForm">
-                        <form className="form-inline"
-                            role="search"
-                            onSubmit={this.handleFormSubmit}
-                        >
-                            <div className="form-group">
-                                <input
-                                    id="city"
-                                    name="city"
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Enter City"
+            <div className="weather">
+                <Container fluid>
+                    <BackBtn />
+                    <div className="card title-card p-4">
+                        <h1 className="card-title text-center pl-4"><strong>Weather Module</strong></h1>
+                        <div className="card-body">
+                            <form className="form-inline"
+                                role="search"
+                                onSubmit={this.handleFormSubmit}>
+                                <Input
                                     value={this.state.city}
                                     onChange={this.handleFormInput}
+                                    name="city"
+                                    type="text"
+                                    placeholder="Enter City"
+                                    formWidth="form-fullWidth"
                                 />
-                            </div>
-                            <button type="submit" className="btn btn-default">
-                                Get Forecast
-                                </button>
-                        </form>
-
-                    </nav>
-                    <div className="container">
-                        <div className="jumbotron">
-                            <h2>{this.state.title}</h2>
-                            <div className="row">
-                                {this.state.forecast.map(item => (
-                                    <div className="col-md-4 forecast-card">
-                                        <p>{item.day}, {item.date}</p>
-                                        <p>{item.text}</p>
-                                        <p>High: {item.high}</p>
-                                        <p>Low: {item.low}</p>
-                                    </div>
-                                ))}
-                            </div>
+                                <FormBtn
+                                    onClick={this.handleFormSubmit}
+                                    noblock>
+                                    Get Forecast</FormBtn>
+                            </form>
                         </div>
                     </div>
+                    <Row classes="justify-content-center profile-row mt-5">
+                        <Col size="sm-12" spacing="text-center">
+                            <h2>{this.state.title}</h2>
+                        </Col>
+                        {this.state.forecast.map(item => (
+                            <Col size="sm-6 md-4 lg-3" spacing="pt-4">
+                                <div className="card text-center">
+                                    <div className="card-header">{item.day}, {item.date}</div>
+                                    <div className="card-body">
+                                        <p>{item.text}</p>
+                                    </div>
+                                    <div className="card-footer">
+                                        High: {item.high}&nbsp; | &nbsp;Low: {item.low}
+                                    </div>
+                                </div>
+                            </Col>
+                        ))}
 
-                </div>
+                    </Row>
+
+                </Container>
+                <BgImage />
             </div>)
     }
 }
