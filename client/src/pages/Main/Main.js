@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Nav } from '../../components/UI';
+import Nav from '../../components/UI';
 import { Row, Col } from '../../components/Grid'
-import { BgImage, Container, IndexBtn } from '../../components/Main';
+import { BgImage, MainContainer, IndexBtn } from '../../components/Main';
 import Quote from '../../components/Main/Quote';
 import AuthService from '../../components/AuthService';
 import './Main.css';
@@ -12,31 +12,36 @@ class Main extends Component {
     super();
     this.Auth = new AuthService();
   }
- 
+
   state = {
-    classes: ""
+    quote: true,
+    bg: "bg-fade",
+    main: "main-scale-up"
   }
 
   componentDidMount() {
     if (!this.Auth.loggedIn()) {
       this.props.history.replace('/welcome');
-    } else {
-      setTimeout(
-        function () {
-          this.setState({ classes: "d-none" });
-        }
-          .bind(this),
-        15000
-      );
     }
+
+    if (sessionStorage.getItem('playIntro')) {
+      this.setState({
+        nav: "",
+        quote: false,
+        bg: "",
+        main: ""
+      })
+    }
+
+    sessionStorage.setItem('playIntro', { val: 'playIntro' });
   }
 
   render() {
     return (
       <div>
-        <Nav ani="nav-fade" />
-        <Quote classes={this.state.classes}/>
-        <Container>
+        {(this.Auth.loggedIn()) ? <Nav /> : ''}
+        {(this.state.quote) ? <Quote /> : ''}
+        <MainContainer classes={this.state.main}>
           <h1 className="main-title-text text-center pt-5 mt-3">Welcome</h1>
           <h2 className="text-center pb-5">What would you like to do today?</h2>
 
@@ -74,8 +79,8 @@ class Main extends Component {
             </Col>
 
           </Row>
-        </Container>
-        <BgImage ani="bg-fade" />
+        </MainContainer>
+        <BgImage ani={this.state.bg} />
       </div>
     )
   }

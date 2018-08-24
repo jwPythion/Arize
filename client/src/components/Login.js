@@ -30,7 +30,7 @@ class Login extends Component {
       .then(res => {
         // once user is logged in
         // take them to their profile page
-        this.props.history.replace(`/profile/${res.data.user._id}`);
+        this.props.history.replace(`/`);
       })
       .catch(err => {
         console.log(err.response);
@@ -50,7 +50,7 @@ class Login extends Component {
       <div>
         <Container fluid>
           <BackBtn />
-          <div className="card text-center p-4">
+          <div className="card title-card text-center p-4">
             <h1 className="card-title mb-0"><strong>LOGIN</strong></h1>
             <div className="card-body">
               <Link to="/signup">

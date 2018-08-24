@@ -15,7 +15,7 @@ class Profile extends Component {
     }
 
     state = {
-        username: "",
+        id: "",
         email: "",
         first: "",
         last: "",
@@ -26,7 +26,7 @@ class Profile extends Component {
     componentDidMount() {
         API.getUser(this.props.user.id).then(res => {
             this.setState({
-                username: res.data.username,
+                id: res.data._id,
                 email: res.data.email,
                 first: res.data.first,
                 last: res.data.last,
@@ -42,16 +42,23 @@ class Profile extends Component {
         this.props.history.replace('/');
     }
 
+    deleteUser = id => {
+        this.Auth.logout();
+        API.deleteUser(id)
+            .then(res => this.props.history.replace('/'))
+            .catch(err => console.log(err));
+    };
+
     render() {
         return (
-            <div>
+            <div className="profile">
                 <Container fluid>
                     <BackBtn />
-                    <div className="card p-4">
+                    <div className="card title-card p-4">
                         <h1 className="card-title pl-4"><strong>{`${this.state.first} ${this.state.last}`}</strong></h1>
                         <div className="card-body">
                             <button className="btn btn-outline-warning btn-lg mr-sm-2">EDIT</button>
-                            <button className="btn btn-outline-danger btn-lg mr-sm-2">DELETE</button>
+                            <button className="btn btn-outline-danger btn-lg mr-sm-2" onClick={() => this.deleteUser(this.state.id)}>DELETE</button>
                             <button className="btn btn-outline-info btn-lg mr-sm-2" onClick={this.logoutBtnHandler}>LOGOUT</button>
                         </div>
                     </div>
@@ -71,12 +78,12 @@ class Profile extends Component {
                                         <td>{this.state.last}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Email:</th>
-                                        <td>{this.state.email}</td>
-                                    </tr>
-                                    <tr>
                                         <th scope="row">Location:</th>
                                         <td>{this.state.location}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email:</th>
+                                        <td>{this.state.email}</td>
                                     </tr>
                                 </tbody>
                             </table>

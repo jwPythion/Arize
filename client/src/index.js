@@ -30,7 +30,6 @@ ReactDOM.render(
                 <Route exact path="/" component={Main}  />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Signup} />
-                <Route exact path="/profile/:id" component={Profile} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/weather" component={Weather} />
