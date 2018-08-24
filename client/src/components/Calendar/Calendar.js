@@ -1,7 +1,7 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import myEvents from '../dummyevents';
+import myEvents from '../../dummyevents';
 import { Container, Row, Col } from '../Grid';
 import { BackBtn } from '../UI';
 import { BgImage } from '../Main';

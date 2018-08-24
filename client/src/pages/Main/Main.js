@@ -21,7 +21,7 @@ class Main extends Component {
 
   componentDidMount() {
     if (!this.Auth.loggedIn()) {
-      this.props.history.replace('/welcome');
+      this.props.history.replace('/signup');
     }
 
     if (sessionStorage.getItem('playIntro')) {
