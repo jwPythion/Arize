@@ -16,7 +16,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import MyCalendar from './components/Calendar';
 import Events from './components/Events/Events';
-import MyCalendar from './components/Calendar/Calendar';
 import Reminder from './components/Reminder/Reminder';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
