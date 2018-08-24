@@ -1,7 +1,7 @@
 import React from "react";
-import './Container.css';
+import './MainContainer.css';
 
-export const Container = props => (
+export const MainContainer = props => (
     <div id="main-container">
 
         <div className={`row justify-content-center align-items-center h-100 ${props.classes}`}>

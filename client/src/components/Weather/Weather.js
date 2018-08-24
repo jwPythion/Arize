@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./Weather.css";
 import API from "../../utils/API";
+import withAuth from '../withAuth';
+import "./Weather.css";
 
 class Weather extends Component {
 
@@ -89,4 +90,4 @@ class Weather extends Component {
 
 
 
-export default Weather; 
+export default withAuth(Weather); 

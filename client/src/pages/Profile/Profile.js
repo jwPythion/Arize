@@ -15,7 +15,6 @@ class Profile extends Component {
     }
 
     state = {
-        username: "",
         email: "",
         first: "",
         last: "",
@@ -26,7 +25,6 @@ class Profile extends Component {
     componentDidMount() {
         API.getUser(this.props.user.id).then(res => {
             this.setState({
-                username: res.data.username,
                 email: res.data.email,
                 first: res.data.first,
                 last: res.data.last,
@@ -71,12 +69,12 @@ class Profile extends Component {
                                         <td>{this.state.last}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Email:</th>
-                                        <td>{this.state.email}</td>
-                                    </tr>
-                                    <tr>
                                         <th scope="row">Location:</th>
                                         <td>{this.state.location}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email:</th>
+                                        <td>{this.state.email}</td>
                                     </tr>
                                 </tbody>
                             </table>

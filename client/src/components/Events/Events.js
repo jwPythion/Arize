@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
-import "./Events.css";
+import React, { Component } from 'react';
+import { Col, Row, Container } from '../../components/Grid';
+import Jumbotron from '../../components/Jumbotron';
+import withAuth from '../withAuth';
+import API from '../../utils/API';
+import './Events.css';
 
 class Events extends Component {
 
@@ -99,4 +100,4 @@ class Events extends Component {
     }
 };
 
-export default Events;
+export default withAuth(Events);

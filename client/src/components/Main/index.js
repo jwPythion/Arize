@@ -1,4 +1,4 @@
 export * from "./BgImage";
 export * from "./Quote";
-export * from "./Container";
+export * from "./MainContainer";
 export * from "./IndexBtn";
