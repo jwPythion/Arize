@@ -39,13 +39,13 @@ class Profile extends Component {
     logoutBtnHandler = evt => {
         evt.preventDefault();
         this.Auth.logout();
-        this.props.history.replace('/');
+        window.location.reload('/');
     }
 
     deleteUser = id => {
         this.Auth.logout();
         API.deleteUser(id)
-            .then(res => this.props.history.replace('/'))
+            .then(res => window.location.reload('/'))
             .catch(err => console.log(err));
     };
 
