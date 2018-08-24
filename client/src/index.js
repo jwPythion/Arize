@@ -6,6 +6,7 @@ import Main from "./pages/Main";
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 
+
 import registerServiceWorker from './registerServiceWorker';
 import axios from "axios";
 
@@ -16,6 +17,7 @@ import Signup from './components/Signup';
 import Events from './components/Events/Events';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
+import Weather from './components/Weather';
 
 if (localStorage.getItem("id_token")) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
@@ -31,6 +33,7 @@ ReactDOM.render(
                 <Route exact path="/profile/:id" component={Profile} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/events" component={Events} />
+                <Route exact path="/weather" component={Weather} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />
