@@ -15,6 +15,7 @@ class Profile extends Component {
     }
 
     state = {
+        id: "",
         email: "",
         first: "",
         last: "",
@@ -25,6 +26,7 @@ class Profile extends Component {
     componentDidMount() {
         API.getUser(this.props.user.id).then(res => {
             this.setState({
+                id: res.data._id,
                 email: res.data.email,
                 first: res.data.first,
                 last: res.data.last,
@@ -40,6 +42,13 @@ class Profile extends Component {
         this.props.history.replace('/');
     }
 
+    deleteUser = id => {
+        this.Auth.logout();
+        API.deleteUser(id)
+            .then(res => this.props.history.replace('/'))
+            .catch(err => console.log(err));
+    };
+
     render() {
         return (
             <div className="profile">
@@ -49,7 +58,7 @@ class Profile extends Component {
                         <h1 className="card-title pl-4"><strong>{`${this.state.first} ${this.state.last}`}</strong></h1>
                         <div className="card-body">
                             <button className="btn btn-outline-warning btn-lg mr-sm-2">EDIT</button>
-                            <button className="btn btn-outline-danger btn-lg mr-sm-2">DELETE</button>
+                            <button className="btn btn-outline-danger btn-lg mr-sm-2" onClick={() => this.deleteUser(this.state.id)}>DELETE</button>
                             <button className="btn btn-outline-info btn-lg mr-sm-2" onClick={this.logoutBtnHandler}>LOGOUT</button>
                         </div>
                     </div>

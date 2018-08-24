@@ -74,7 +74,9 @@ class Weather extends Component {
                         </div>
                     </div>
                     <Row classes="justify-content-center profile-row">
-
+                    <Col size="sm-12" spacing="text-center">
+                    <h2>{this.state.title}</h2>
+                    </Col>
                         {this.state.forecast.map(item => (
                             <Col size="sm-6 md-3 lg-4" spacing="text-center pt-4">
                                 <div className="card">
