@@ -14,12 +14,12 @@ class Signup extends Component {
   }
 
   state = {
-    first: null,
-    last: null,
-    email: null,
-    password: null,
-    location: null
-
+    first: "",
+    last: "",
+    email: "",
+    password: "",
+    location: "",
+    img:""
   }
 
   componentWillMount() {
@@ -30,7 +30,7 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password)
+    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password, this.state.location, this.state.img)
       .then(res => {
         console.log(res.data);
         // once the user has signed up
@@ -52,7 +52,7 @@ class Signup extends Component {
       <div>
         <Container fluid>
           <BackBtn />
-          <div className="card text-center p-4">
+          <div className="card title-card text-center p-4">
             <h1 className="card-title pl-4 mb-0"><strong>INTAKE FORM</strong></h1>
             <div className="card-body">
               <Link to="/login">
@@ -94,6 +94,14 @@ class Signup extends Component {
               type="password"
             />
             <Input
+              value={this.state.img}
+              onChange={this.handleChange}
+              name="img"
+              label="Image URL:"
+              type="text"
+              placeholder="http://"
+            />
+            <Input
               value={this.state.location}
               onChange={this.handleChange}
               name="location"
@@ -104,7 +112,7 @@ class Signup extends Component {
               disabled={!(this.state.first && this.state.last && this.state.email && this.state.password)}
               onClick={this.handleFormSubmit}
             >
-              Submit Book
+              Submit
               </FormBtn>
           </form>
         </Container>

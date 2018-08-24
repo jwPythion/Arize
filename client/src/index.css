@@ -13,8 +13,16 @@ body{
   padding: 0;
 }
 
+a:hover {
+  text-decoration:none;
+}
+
 .row{
   margin:0;
+}
+
+.input-full-width{
+  width: calc(100% - 130px)!important;
 }
 
 .hvr-ripple-out{

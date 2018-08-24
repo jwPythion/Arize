@@ -34,10 +34,7 @@
     "mongoose": "^5.1.0",
     "morgan": "^1.9.0",
     "react": "^16.4.2",
-    "react-big-calendar": "^0.19.2",
     "react-dom": "^16.4.2",
-    "react-notifications": "^1.4.3",
-    "react-responsive-modal": "^3.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
   }
