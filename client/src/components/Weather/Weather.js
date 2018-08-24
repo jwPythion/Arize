@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import withAuth from '../withAuth';
+import {Container} from '../';
 import "./Weather.css";
 
 class Weather extends Component {
@@ -12,7 +13,12 @@ class Weather extends Component {
     }
 
     componentDidMount() {
-        this.getWeather();
+        API.getUser(this.props.user.id).then(res => {
+            this.setState({
+                city: res.data.location,
+            })
+            this.getWeather();
+        });
     }
 
     getWeather = () => {
