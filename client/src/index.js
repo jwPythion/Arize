@@ -17,6 +17,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Events from './components/Events/Events';
 import MyCalendar from './components/Calendar/Calendar';
+import Reminder from './components/Reminder/Reminder';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
 import { BgImage, Container } from './components/Main';
@@ -36,6 +37,7 @@ ReactDOM.render(
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/calendar" component={MyCalendar} />
+                <Route exact path="/reminders" component={Reminder} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />
