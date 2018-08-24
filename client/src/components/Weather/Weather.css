@@ -1,7 +1,4 @@
 
-.weather .title-card{
-    margin: 4rem 5rem 3rem 5rem;
-}
 /* 
 .weatherMod .brand 
 {
@@ -11,7 +8,7 @@
     text-align: center;
     margin: auto;
     background-color: #e7e5e4
-} 
+} */
 
 .weatherMod h1 {
     text-align: center;
@@ -44,7 +41,7 @@
     border-bottom-style: dotted;
     border-left-style: solid;
     background-color: #e7e5e4
-}*/
+}
 
 .weatherMod #modForm{
    
