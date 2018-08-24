@@ -37,7 +37,7 @@ class Nav extends Component {
     logoutBtnHandler = evt => {
         evt.preventDefault();
         this.Auth.logout();
-        this.props.history.push('/');
+        window.location.reload('/');
     }
 
     render() {
