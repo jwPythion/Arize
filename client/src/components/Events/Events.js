@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
+import { BackBtn } from "../UI/BackBtn";
 import API from "../../utils/API";
+import withAuth from "../withAuth";
 import "./Events.css";
 
 class Events extends Component {
@@ -33,7 +35,9 @@ class Events extends Component {
 
     render() {
         return (
+            <div className="events">
             <Container fluid>
+            <BackBtn/>
                 <Row>
                     <Col size="md-12">
                         <Jumbotron>
@@ -95,8 +99,9 @@ class Events extends Component {
                     })}
                 </Row>
             </Container>
+            </div>
         )
     }
 };
 
-export default Events;
+export default withAuth(Events);

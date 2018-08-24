@@ -1,14 +1,33 @@
-.navbar{
+.mainNav .navbar{
     position:absolute;
     top:0;
     z-index: 15;
+    align-items:start;
 }
 
-.navbar-brand{
+.mainNav .navbar-brand{
     color:rgba(0,0,0,.75)!important;
     font-size: 4.5rem!important;
     padding:0;
     margin:0;
+}
+
+.mainNav .profile-img{
+  width:85px;
+  height:auto;
+  
+}
+
+.mainNav .navbar-nav a{
+  cursor:pointer;
+}
+
+.mainNav .navbar-nav button{
+  border-radius: 0;
+}
+
+.mainNav .dropdown-item{
+  cursor: default!important;
 }
 
 .nav-fade{
@@ -16,6 +35,10 @@
   animation: fadeInConst 1s ease-in 1;
   animation-fill-mode: forwards;
   animation-delay: 11s;
+}
+
+.mainNav .dropdown-toggle::after {
+  content: none;
 }
 
 @keyframes fadeInConst {

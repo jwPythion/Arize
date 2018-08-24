@@ -52,7 +52,7 @@ class Signup extends Component {
       <div>
         <Container fluid>
           <BackBtn />
-          <div className="card text-center p-4">
+          <div className="card title-card text-center p-4">
             <h1 className="card-title pl-4 mb-0"><strong>INTAKE FORM</strong></h1>
             <div className="card-body">
               <Link to="/login">

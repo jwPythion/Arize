@@ -1,4 +1,4 @@
-.card{
+.title-card{
     margin: 4rem 5rem 3rem 5rem;
 }
 
@@ -6,15 +6,15 @@
     margin: 0 5rem 5rem 5rem;
 }
 
-.table td, .table th{
+.profile .table td, .table th{
     border:none;
     font-size: 1.25rem;
 }
 
-.table th{
+.profile .table th{
     text-align:right;
 }
 
-.table td{
+.profile .table td{
     text-align: left;
 }
