@@ -1,7 +1,8 @@
 import React from 'react';
 import Images from '../../weather-icons.json';
 
-var findImage = val => {
+var findImage = cast => {
+    const val = cast || "not found";
     let img = Images.filter(element => element.name === val.toLowerCase());
     if (!img) img = Images.filter(element => element.name === "not found");
     return img[0].icon;
