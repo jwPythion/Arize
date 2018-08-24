@@ -21,6 +21,10 @@ a:hover {
   margin:0;
 }
 
+.input-full-width{
+  width: calc(100% - 130px)!important;
+}
+
 .hvr-ripple-out{
   color:#FFF!important;
 }

@@ -42,10 +42,10 @@ class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div className="profile">
                 <Container fluid>
                     <BackBtn />
-                    <div className="card p-4">
+                    <div className="card title-card p-4">
                         <h1 className="card-title pl-4"><strong>{`${this.state.first} ${this.state.last}`}</strong></h1>
                         <div className="card-body">
                             <button className="btn btn-outline-warning btn-lg mr-sm-2">EDIT</button>

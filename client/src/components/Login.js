@@ -50,7 +50,7 @@ class Login extends Component {
       <div>
         <Container fluid>
           <BackBtn />
-          <div className="card text-center p-4">
+          <div className="card title-card text-center p-4">
             <h1 className="card-title mb-0"><strong>LOGIN</strong></h1>
             <div className="card-body">
               <Link to="/signup">
