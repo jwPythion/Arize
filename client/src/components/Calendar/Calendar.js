@@ -1,7 +1,8 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import myEvents from '../dummyevents';
+import withAuth from '../withAuth';
+import myEvents from '../../dummyevents';
 import { Container, Row, Col } from '../Grid';
 import { BackBtn } from '../UI';
 import { BgImage } from '../Main';
@@ -39,4 +40,4 @@ const MyCalendar = props => {
     );
 };
 
-export default MyCalendar;
+export default withAuth(MyCalendar);
