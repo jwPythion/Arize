@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Main from "./pages/Main";
 import Profile from './pages/Profile';
+import Edit from './pages/Profile/Edit';
 import NotFound from './pages/NotFound';
 
 
@@ -32,6 +33,7 @@ ReactDOM.render(
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/profile" component={Profile} />
+                <Route exact path="/profile/edit" component={Edit} />
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/weather" component={Weather} />
                 <Route exact path="/calendar" component={MyCalendar} />

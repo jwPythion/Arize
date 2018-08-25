@@ -82,6 +82,13 @@ app.post('/api/proxy/weather', (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+app.post('/api/user/:id', (req, res) => {
+  db.User
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
 app.delete('/api/user/:id', (req, res) => {
   db.User
     .findById({ _id: req.params.id })

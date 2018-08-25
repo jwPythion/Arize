@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './BackBtn.css';
 
-export const BackBtn = () => (
+export const BackBtn = ({ href }) => (
     <nav className="navbar navbar-light w-100 px-5">
-        <Link to={"/"}>
+        <Link to={(href) ? href : "/"}>
             <button className="btn btn-success btn-lg hvr-ripple-out back-btn">
                 <i className="fas fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;Back
         </button>
