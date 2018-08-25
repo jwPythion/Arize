@@ -7,6 +7,9 @@ footer{
   height:20px;
   z-index: 14;
   mix-blend-mode: multiply;
+}
+
+.footer-fade{
   opacity:0;
   animation: fadeInConst 1s ease-in 1;
   animation-fill-mode: forwards;
@@ -23,8 +26,4 @@ p.footer{
   padding: .15rem;
   width:100%;
   text-align:center;
-  opacity:0;
-  animation: fadeInConst 1s ease-in 1;
-  animation-fill-mode: forwards;
-  animation-delay: 11s;
 }
