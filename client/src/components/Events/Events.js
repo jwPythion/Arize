@@ -1,22 +1,32 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
+import { Input, FormBtn } from "../Form";
 import Jumbotron from "../../components/Jumbotron";
 import { BackBtn } from "../UI/BackBtn";
+import { BgImage } from "../Main";
 import API from "../../utils/API";
 import withAuth from "../withAuth";
 import "./Events.css";
+
 
 class Events extends Component {
 
     state = {
         result: [],
         search: "",
-        location: ""
+        location: "",
+        loading: false
     };
 
     searchEvents = (eventType, location) => {
+        this.setState({ loading: true })
         API.getEvent(eventType, location)
-            .then(res => this.setState({ result: res.data.events.event }))
+            .then(res => {
+                this.setState({
+                    result: res.data.events.event,
+                    loading: false
+                })
+            })
             .catch(err => console.log(err));
     };
 
@@ -36,69 +46,58 @@ class Events extends Component {
     render() {
         return (
             <div className="events">
-            <Container fluid>
-            <BackBtn/>
-                <Row>
-                    <Col size="md-12">
-                        <Jumbotron>
-                            <h1>Search for events near you!</h1>
-                        </Jumbotron>
-                        <form>
-                            <div className="form-group">
-                                <label htmlFor="search" className="label">Search for an event:</label>
-                                <input
-                                    onChange={this.handleInputChange}
+                <Container fluid>
+                    <BackBtn />
+
+                    <div className="card weather-title text-center p-4">
+                        <h1 className="card-title pl-4"><strong>Search for events near you!</strong></h1>
+                        <div className="card-body">
+                            <form className="w-100">
+                                <Input
                                     value={this.state.search}
+                                    onChange={this.handleInputChange}
                                     name="search"
                                     type="text"
-                                    className="form-control"
                                     placeholder="Search for an event"
-                                    id="search"
+                                    fullwidth="input-full"
                                 />
-                                <br />
-                                <label htmlFor="location" className="label">Where are you?</label>
-                                <input
-                                    onChange={this.handleInputChange}
+                                <Input
                                     value={this.state.location}
+                                    onChange={this.handleInputChange}
                                     name="location"
                                     type="text"
-                                    className="form-control"
-                                    placeholder="Enter location here"
-                                    id="search"
+                                    placeholder="Enter City"
+                                    fullwidth="input-full"
                                 />
-                                <br />
-                                <button
+                                <FormBtn
                                     onClick={this.handleFormSubmit}
-                                    className="btn btn-light"
-                                >Search</button>
-                            </div>
-                        </form>
+                                >Search</FormBtn>
+                            </form>
 
-                    </Col>
-                </Row>
-                <Row>
-                    {this.state.result.map(event => {
-                        return (<div className="card text-center">
-                            <div className="card-header">
-                                <h2 key={event.id}>{event.title}</h2>
-                            </div>
-                            <div className="card-body">
-                                <Col size="md-4">
-                                <div className="right">
-                                    {event.image ? <img src={event.image.medium.url} alt="img"></img> : <p></p>}
+                        </div>
+                    </div>
+                    <Row classes="justify-content-center profile-row">
+                        <Col size="sm-12" spacing="text-center bg-light">
+                            {this.state.loading ? <img src="/assets/img/loading-icon.gif" alt="loadingimg" className="loading" /> : ''}
+                        </Col>
+                        {this.state.result.reverse().map(event => (
+                            <Col size="sm-12 md-10 lg-9" spacing="text-center pt-4">
+                                <div className="card text-center " key={event.id}>
+                                    <div className="card-header">{event.title}</div>
+
+                                    <div className="card-body d-flex justify-content-center px-5">
+                                        {event.image ? <img src={event.image.medium.url} className="img-fluid mr-2" alt="img"></img> : ''}
+                                        <p className="card-text">{event.description ? <div dangerouslySetInnerHTML={{ __html: event.description }} /> : `No description found.`}</p>
                                     </div>
-                                </Col>
-                                <Col size="md-8">
-                                <div className="left">
-                                    {event.description ? <p> Description: {event.description}</p> : <p>No description found.</p>}
-                                    {event.url ? <a href={event.url} target="_blank"> Link to page</a> : <p>No link found.</p>}
+                                    <div className="card-footer p-0">
+                                        {event.url ? <a href={event.url} className="btn btn-info btn-block" target="_blank">Link to page</a> : <p>No link found.</p>}
                                     </div>
-                                </Col>
-                            </div>
-                        </div>)
-                    })}
-                </Row>
-            </Container>
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+                <BgImage />
             </div>
         )
     }
