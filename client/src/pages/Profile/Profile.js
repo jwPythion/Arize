@@ -58,7 +58,7 @@ class Profile extends Component {
                     btn="btn-danger"
                     btnText="DELETE"
                     btnHandler={() => this.deleteUser(this.state.id)}>
-                    <p>This is the modal</p>
+                    <p>Are you sure you want to delete your profile?</p>
                 </Modal>
                 <Container fluid>
                     <BackBtn />

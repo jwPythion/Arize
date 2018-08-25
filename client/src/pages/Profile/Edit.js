@@ -5,7 +5,7 @@ import withAuth from '../../components/withAuth';
 import API from '../../utils/API';
 import { Container, Row, Col } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
-import { BackBtn } from '../../components/UI';
+import { BackBtn, Modal } from '../../components/UI';
 import { BgImage } from '../../components/Main';
 import './Profile.css';
 
@@ -57,7 +57,7 @@ class Edit extends Component {
                 location: this.state.location,
                 img: this.state.img
             })
-                .then(res => this.history.replace('/profile'))
+                .then(res => window.location.reload('/profile'))
                 .catch(err => console.log(err));
         }
     };
@@ -65,18 +65,32 @@ class Edit extends Component {
     openPassword = evt => {
         evt.preventDefault();
         const val = (this.state.collapse.length < 1) ? "show" : "";
-        this.setState({ 
+        this.setState({
             collapse: val,
-            password:"",
-            confirm:""
-         })
+            password: "",
+            confirm: ""
+        })
     }
 
     render() {
         return (
             <div className="profile">
+                <Modal
+                    id="profilePicModal"
+                    title="Enter new image url"
+                    btn="btn-info"
+                    btnText="SAVE"
+                    btnHandler={this.handleFormSubmit}>
+                    <Input
+                        value={this.state.img}
+                        onChange={this.handleChange}
+                        name="img"
+                        type="text"
+                        placeholder="http://"
+                    />
+                </Modal>
                 <Container fluid>
-                    <BackBtn href='/profile'/>
+                    <BackBtn href='/profile' />
                     <div className="card text-center title-card p-4">
                         <h1 className="card-title"><strong>Edit User</strong></h1>
                         <h2 className="card-title"><strong>{`${this.state.first} ${this.state.last}`}</strong></h2>
@@ -87,7 +101,7 @@ class Edit extends Component {
                                 <img className="img-fluid rounded-circle" src={this.state.img} alt="profile pic" />
                                 <div className="overlay">
                                     <div className="text">
-                                        <button className="btn btn-outline-warning">Change Image</button>
+                                        <button className="btn btn-outline-warning" data-toggle="modal" data-target="#profilePicModal">Change Image</button>
                                     </div>
                                 </div>
                             </div>
