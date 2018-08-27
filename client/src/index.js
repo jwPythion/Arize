@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Main from "./pages/Main";
-import { Welcome } from './pages/Welcome';
+import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
 import Edit from './pages/Profile/Edit';
 import NotFound from './pages/NotFound';
