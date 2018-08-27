@@ -19,6 +19,11 @@ class Welcome extends Component {
     }
 
     componentDidMount() {
+        if (!this.Auth.loggedIn()) {
+            this.props.history.replace('/');
+            return;
+        }
+
         setTimeout(function () {
             this.setState({ classes: "" });
         }
