@@ -11,7 +11,7 @@ class Welcome extends Component {
     }
 
     state = {
-        classes: "is-preload"
+        classes: "is-preload",
     }
 
     componentDidMount() {
@@ -19,6 +19,16 @@ class Welcome extends Component {
             this.setState({ classes: "" });
         }
             .bind(this), 100);
+    }
+
+    menuOpen = evt => {
+        evt.preventDefault();
+        this.setState({ classes: "is-menu-visible" });
+    }
+
+    menuClose = evt => {
+        evt.preventDefault();
+        this.setState({ classes: "" });
     }
 
     render() {
@@ -34,8 +44,9 @@ class Welcome extends Component {
                         <nav id="nav">
                             <ul>
                                 <li className="special">
-                                    <a href="#menu" className="menuToggle"><span>Menu</span></a>
+                                    <a className="menuToggle" onClick={this.menuOpen}><span>Menu</span></a>
                                     <div id="menu">
+                                        <a className="close" onClick={this.menuClose}></a>
                                         <ul>
                                             <li><a href="index.html">Home</a></li>
                                             <li><a href="generic.html">Generic</a></li>
@@ -43,7 +54,7 @@ class Welcome extends Component {
                                             <li><a href="#">Sign Up</a></li>
                                             <li><a href="#">Log In</a></li>
                                         </ul>
-                                        <a href="#menu" className="close"></a>
+
                                     </div>
                                 </li>
                             </ul>

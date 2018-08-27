@@ -1489,11 +1489,11 @@ ul.icons {
     }
 
 .landing.is-menu-visible #page-wrapper {
-    opacity: 0.35;
+    /* opacity: 0.35; */
 }
 
     .landing.is-menu-visible #page-wrapper:before {
-        display: block;
+        /* display: block; */
     }
 
 .landing.is-menu-visible #menu {
