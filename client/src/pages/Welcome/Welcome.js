@@ -19,7 +19,7 @@ class Welcome extends Component {
     }
 
     componentDidMount() {
-        if (!this.Auth.loggedIn()) {
+        if (this.Auth.loggedIn()) {
             this.props.history.replace('/');
             return;
         }
