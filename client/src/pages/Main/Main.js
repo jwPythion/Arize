@@ -48,21 +48,6 @@ class Main extends Component {
           <Row classes="justify-content-center mb-5">
 
             <Col size="lg-4 sm-6" spacing="pb-3">
-              <Link to={"/groups"}>
-                <IndexBtn color="warning" img="groups-icon.png" alt="groups">Groups</IndexBtn>
-              </Link>
-            </Col>
-            <Col size="lg-4 sm-6" spacing="pb-3">
-              <Link to={"/reminders"}>
-                <IndexBtn color="info" img="reminder-icon.png" alt="reminder">Reminders</IndexBtn>
-              </Link>
-            </Col>
-            <Col size="lg-4 sm-6" spacing="pb-3">
-              <Link to={"/events"}>
-                <IndexBtn color="danger" img="events-icon.png" alt="events">Events</IndexBtn>
-              </Link>
-            </Col>
-            <Col size="lg-4 sm-6" spacing="pb-3">
               <Link to={"/weather"}>
                 <IndexBtn color="primary" img="weather-icon.png" alt="weather">Weather</IndexBtn>
               </Link>
@@ -72,6 +57,23 @@ class Main extends Component {
                 <IndexBtn color="success" img="calendar-icon.png" alt="calendar">Calendar</IndexBtn>
               </Link>
             </Col>
+            <Col size="lg-4 sm-6" spacing="pb-3">
+              <Link to={"/events"}>
+                <IndexBtn color="info" img="events-icon.png" alt="events">Events</IndexBtn>
+              </Link>
+            </Col>
+
+            <Col size="lg-4 sm-6" spacing="pb-3">
+              <Link to={"/groups"}>
+                <IndexBtn color="warning" img="groups-icon.png" alt="groups">Groups</IndexBtn>
+              </Link>
+            </Col>
+            {/* <Col size="lg-4 sm-6" spacing="pb-3">
+              <Link to={"/reminders"}>
+                <IndexBtn color="info" img="reminder-icon.png" alt="reminder">Reminders</IndexBtn>
+              </Link>
+            </Col> */}
+
             <Col size="lg-4 sm-6" spacing="pb-3">
               <Link to={"/todolist"}>
                 <IndexBtn color="danger" img="todolist-icon.png" alt="to do list">To Do List</IndexBtn>
