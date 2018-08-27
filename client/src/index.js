@@ -21,6 +21,7 @@ import Events from './components/Events/Events';
 import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
 import Weather from './components/Weather';
+import TodoList from './components/TodoList';
 
 
 if (localStorage.getItem("id_token")) {
@@ -40,6 +41,7 @@ ReactDOM.render(
                 <Route exact path="/events" component={Events} />
                 <Route exact path="/weather" component={Weather} />
                 <Route exact path="/calendar" component={MyCalendar} />
+                <Route exact path="/todo" component={TodoList} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />
