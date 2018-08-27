@@ -20,10 +20,12 @@ Arise is a full stack web based social networking appilcation geared toward thos
 
 
 ## To Use
-* Log In or create an account to search for jobs worldwide
-* Apply for jobs via displayed links 
-* Save your recent job searches to come back to later
-* Job search history populates on login 
+* Log In or create an account to search access platform
+* Fill out Todo List, Calendar
+* Search for Events in your area
+* Request a ride via Uber or Lyft 
+* Connect with others with native Groups 
+
 
 
 
@@ -31,4 +33,4 @@ Arise is a full stack web based social networking appilcation geared toward thos
 Kimberly Cooper, Connor Hysham, Jaymes Johnson, Andia Katz
 
 ## Other Credits
-We do not own any assets, all are obtained from Yahoo! LLC and Authentic Jobs, Inc. 
+We do not own any assets, all are obtained from Yahoo! LLC & Eventful 
