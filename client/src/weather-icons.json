@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "sunny",
+        "icon": "/assets/img/sunny.png"
+    },
+    {
+        "id": 2,
+        "name": "partly cloudy",
+        "icon": "/assets/img/partly-cloudy.png"
+    },
+    {
+        "id": 3,
+        "name": "mostly sunny",
+        "icon": "/assets/img/mostly-sunny.png"
+    },
+    {
+        "id": 4,
+        "name": "rain",
+        "icon": "/assets/img/rain.png"
+    },
+    {
+        "id": 5,
+        "name": "thunderstorms",
+        "icon": "/assets/img/thunderstorms.png"
+    },
+    {
+        "id": 6,
+        "name": "scattered thunderstorms",
+        "icon": "/assets/img/scattered-thunder.png"
+    },
+    {
+        "id": 7,
+        "name": "windy",
+        "icon": "/assets/img/windy.png"
+    },
+    {
+        "id": 8,
+        "name": "snow",
+        "icon": "/assets/img/snow.png"
+    },
+    {
+        "id": 9,
+        "name": "not found",
+        "icon": "/assets/img/not-found.png"
+    }
+]

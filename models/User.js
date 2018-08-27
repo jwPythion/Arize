@@ -38,7 +38,13 @@ let UserSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  groups: [
+    {
+    type: Schema.Types.ObjectId,
+      ref: "Group"
+    }
+  ]
 });
 
 // Execute before each user.save() call
