@@ -19,4 +19,5 @@ export default {
   getWeatherFromYahoo: (query) => {
     return axios.post("/api/proxy/weather", {"query": query});
   }
+  
 };

@@ -111,7 +111,7 @@ export default [
     },
     {
       id: 12,
-      title: 'Bake Sell',
+      title: 'Bake Sale',
       start: new Date(2018, 7, 14, 12, 0, 0),
       end: new Date(2018, 7, 14, 16, 0, 0)
     },
