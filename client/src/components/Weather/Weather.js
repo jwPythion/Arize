@@ -65,7 +65,7 @@ class Weather extends Component {
                                     name="city"
                                     type="text"
                                     placeholder="Enter City"
-                                    fullwidth="input-full-width"
+                                    fullwidth="input-full-inline"
                                 />
                                 <FormBtn
                                     onClick={this.handleFormSubmit}
@@ -79,7 +79,7 @@ class Weather extends Component {
                             <h2>{this.state.title}</h2>
                         </Col>
                         {this.state.forecast.map(item => (
-                            <Col size="sm-6 md-3 lg-4" spacing="text-center pt-4">
+                            <Col size="sm-6 md-4 lg-3" spacing="text-center pt-4">
                                 <div className="card">
                                     <div className="card-header">{item.day}, {item.date}</div>
                                     <div className="card-body">

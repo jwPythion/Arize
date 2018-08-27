@@ -35,8 +35,12 @@ a:hover {
   margin:0;
 }
 
-.input-full-width{
+.input-full-inline{
   width: calc(100% - 130px)!important;
+}
+
+.input-full{
+  width:100%;
 }
 
 .hvr-ripple-out{

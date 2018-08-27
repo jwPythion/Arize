@@ -1,0 +1,55 @@
+.indexBtn .pic-container {
+    position: relative;
+  }
+  
+  .indexBtn .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity:0;
+    transition: .5s ease;
+    background-color: rgba(255,255,255, 0.5);
+  }
+
+  .indexBtn .overlay-danger{
+      background-color: rgba(220,53,69, .5);
+  }
+  .indexBtn .overlay-warning{
+    background-color:rgba(255,193,7, .5);
+  }
+  .indexBtn .overlay-primary{
+    background-color:rgba(0,123,255, .5);
+  }
+  .indexBtn .overlay-success{
+    background-color:rgba(40,167,69, .5);
+  }
+  .indexBtn .overlay-info{
+    background-color:rgba(23,162,184, .5);
+  }
+  
+  .indexBtn .pic-container:hover .overlay {
+    opacity:1;
+  }
+
+  .indexBtn .circle{
+    border-radius:50%;
+  }
+  
+  .indexBtn .text {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 10px rgba(51,51,51,.5),
+                0 5px 8px rgba(0,0,0,.15),
+                0 10px 15px rgba(0,0,0,.15);
+    text-align: center;
+  }

@@ -4,7 +4,7 @@ import AuthService from '../../components/AuthService';
 import withAuth from '../../components/withAuth';
 import API from '../../utils/API';
 import { Container, Row, Col } from '../../components/Grid';
-import { BackBtn } from '../../components/UI';
+import { BackBtn, Modal } from '../../components/UI';
 import { BgImage } from '../../components/Main';
 import './Profile.css';
 
@@ -52,13 +52,23 @@ class Profile extends Component {
     render() {
         return (
             <div className="profile">
+                <Modal
+                    id="deleteModal"
+                    title="Confirm Account Delete"
+                    btn="btn-danger"
+                    btnText="DELETE"
+                    btnHandler={() => this.deleteUser(this.state.id)}>
+                    <p>Are you sure you want to delete your profile?</p>
+                </Modal>
                 <Container fluid>
                     <BackBtn />
                     <div className="card title-card p-4">
                         <h1 className="card-title pl-4"><strong>{`${this.state.first} ${this.state.last}`}</strong></h1>
                         <div className="card-body">
-                            <button className="btn btn-outline-warning btn-lg mr-sm-2">EDIT</button>
-                            <button className="btn btn-outline-danger btn-lg mr-sm-2" onClick={() => this.deleteUser(this.state.id)}>DELETE</button>
+                            <Link to='/profile/edit'>
+                                <button className="btn btn-outline-warning btn-lg mr-sm-2">EDIT</button>
+                            </Link>
+                            <button className="btn btn-outline-danger btn-lg mr-sm-2" data-toggle="modal" data-target="#deleteModal">DELETE</button>
                             <button className="btn btn-outline-info btn-lg mr-sm-2" onClick={this.logoutBtnHandler}>LOGOUT</button>
                         </div>
                     </div>
