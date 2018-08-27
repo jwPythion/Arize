@@ -9,7 +9,7 @@ if (sessionStorage.getItem('bgImg')) {
 }
 
 export const Footer = () => (
-  <div>
+  <div className="arize-footer">
     <p className={`footer ${classes}`}><i className="fas fa-copyright"></i> 2018 Arize</p>
     <footer className={`bg-dark text-light ${classes}`}></footer>
   </div>

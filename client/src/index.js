@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
 import Main from "./pages/Main";
+import { Welcome } from './pages/Welcome';
 import Profile from './pages/Profile';
 import Edit from './pages/Profile/Edit';
 import NotFound from './pages/NotFound';
@@ -21,6 +22,7 @@ import Wrapper from './components/Wrapper'
 import { Footer } from './components/UI/Footer';
 import Weather from './components/Weather';
 
+
 if (localStorage.getItem("id_token")) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
 }
@@ -30,6 +32,7 @@ ReactDOM.render(
         <Wrapper>
             <Switch>
                 <Route exact path="/" component={Main}  />
+                <Route exact path="/welcome" component={Welcome}  />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/profile" component={Profile} />
