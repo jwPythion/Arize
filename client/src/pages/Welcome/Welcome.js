@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import AuthService from '../../components/AuthService';
 import './Welcome.css';
 
@@ -19,6 +21,24 @@ class Welcome extends Component {
             this.setState({ classes: "" });
         }
             .bind(this), 100);
+        Events.scrollEvent.register('begin', function (to, element) {
+            console.log("begin", arguments);
+        });
+
+        Events.scrollEvent.register('end', function (to, element) {
+            console.log("end", arguments);
+        });
+
+        scrollSpy.update();
+    }
+
+    componentWillUnmount() {
+        Events.scrollEvent.remove('begin');
+        Events.scrollEvent.remove('end');
+    }
+
+    scrollTo = () => {
+        scroll.scrollTo(100);
     }
 
     menuOpen = evt => {
@@ -72,7 +92,10 @@ class Welcome extends Component {
                                 <li><a href="#" className="button primary">Activate</a></li>
                             </ul>
                         </div>
-                        <a href="#one" className="more scrolly">Learn More</a>
+                        <Link to="one" spy={true} smooth={true} duration={1500}>
+                            <a className="more">Learn More</a>
+                        </Link>
+
                     </section>
 
                     {/* <!-- One --> */}
