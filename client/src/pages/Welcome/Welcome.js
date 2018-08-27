@@ -4,6 +4,7 @@ import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } f
 import AuthService from '../../components/AuthService';
 import './Welcome.css';
 
+let lastScrollY = 0;
 
 class Welcome extends Component {
 
@@ -14,6 +15,7 @@ class Welcome extends Component {
 
     state = {
         classes: "is-preload",
+        headclass: "alt"
     }
 
     componentDidMount() {
@@ -30,15 +32,30 @@ class Welcome extends Component {
         });
 
         scrollSpy.update();
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
         Events.scrollEvent.remove('begin');
         Events.scrollEvent.remove('end');
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     scrollTo = () => {
         scroll.scrollTo(100);
+    }
+
+    scrollToTop = () => {
+        scroll.scrollToTop();
+    }
+
+    handleScroll = () => {
+        lastScrollY = window.scrollY;
+        if (lastScrollY > 500) {
+            this.setState({ headclass: "title" });
+        } else {
+            this.setState({ headclass: "alt" });
+        }
     }
 
     menuOpen = evt => {
@@ -59,8 +76,8 @@ class Welcome extends Component {
                 <div id="page-wrapper">
 
                     {/* <!-- Header --> */}
-                    <header id="header" className="alt">
-                        <h1><a href="index.html">Spectral</a></h1>
+                    <header id="header" className={this.state.headclass}>
+                        <h1><a onClick={this.scrollToTop}>Spectral</a></h1>
                         <nav id="nav">
                             <ul>
                                 <li className="special">
@@ -92,7 +109,7 @@ class Welcome extends Component {
                                 <li><a href="#" className="button primary">Activate</a></li>
                             </ul>
                         </div>
-                        <Link to="one" spy={true} smooth={true} duration={1500}>
+                        <Link to="one" spy={true} smooth={"easeInOutCubic"} duration={1500}>
                             <a className="more">Learn More</a>
                         </Link>
 

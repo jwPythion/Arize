@@ -40,7 +40,7 @@
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    border-bottom: dotted 1px;
+    /* border-bottom: dotted 1px; */
     color: inherit;
     text-decoration: none;
 }
@@ -69,6 +69,10 @@
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+
+.landing .title h1 a{
+    font-size: 1.25rem;
 }
 
     .landing h1 a, .landing h2 a, .landing h3 a, .landing h4 a, .landing h5 a, .landing h6 a {
