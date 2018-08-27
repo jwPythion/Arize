@@ -41,6 +41,14 @@ class Events extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         this.searchEvents(this.state.search, this.state.location);
+        this.setState({
+            loading: true
+        })
+        setTimeout( () => {
+            this.setState({
+                loading: false
+            })
+        }, 3000)
     };
 
     render() {

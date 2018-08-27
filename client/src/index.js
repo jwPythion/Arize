@@ -23,6 +23,7 @@ import { Footer } from './components/UI/Footer';
 import Weather from './components/Weather';
 import TodoList from './components/TodoList';
 
+import Groups from './components/Groups/Groups';
 
 if (localStorage.getItem("id_token")) {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
@@ -42,6 +43,7 @@ ReactDOM.render(
                 <Route exact path="/weather" component={Weather} />
                 <Route exact path="/calendar" component={MyCalendar} />
                 <Route exact path="/todolist" component={TodoList} />
+                <Route exact path="/groups" component={Groups} />
                 <Route component={NotFound} />
             </Switch>
             <Footer />

@@ -97,6 +97,39 @@ app.delete('/api/user/:id', (req, res) => {
     .catch(err => res.status(422).json(err));
 });
 
+app.post('/api/groups/:id', (req, res) => {
+    db.Group.create(req.body)
+    .then(dbGroup => {
+      return db.Group.findOneAndUpdate({ _id: dbGroup._id }, {$push: {users: req.params.id }}, { new: true })
+    })
+    .then(dbGroup => db.User.findOneAndUpdate({ _id: req.params.id }, {$push: {groups: dbGroup._id }}, { new: true }))
+    .then(dbGroup => {
+      res.json(dbGroup);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+app.get('/groups/:id', (req, res) => {
+  db.User.findById({
+    _id: req.params.id
+  }).populate('groups')
+  .then(dbGroup => {
+    console.log(dbGroup);
+    res.json(dbGroup);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+});
+
+/*app.post('/api/groups', (req, res) => {
+  db.Group.create(req.body)
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});*/
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
