@@ -26,6 +26,7 @@ class TodoList extends Component {
 
 
     addItem(e) {
+        e.preventDefault();
         if (this._inputElement !== "") {
             var newItem = {
                 text: this._inputElement.value,
@@ -61,16 +62,32 @@ class TodoList extends Component {
     render() {
         return (
             <div className="todoListMain">
-                <div className="header">
-                    <form onSubmit={this.addItem}>
-                        <input ref={(a) => this._inputElement = a}
-                            placeholder="enter task">
-                        </input>
-                        <button type="submit"> add </button>
-                    </form>
-                </div>
-                <TodoItems entries={this.state.items} 
-                        delete={this.deleteItem} />
+                <Container fluid>
+                    <BackBtn />
+                    <div className="card weather-title p-4">
+                        <h1 className="card-title text-center pl-4"><strong>To Do List</strong></h1>
+                        <div className="card-body">
+                            <form className="form-inline" onSubmit={this.addItem}>
+
+                                <input className="input-full-inline"
+                                    ref={(a) => this._inputElement = a}
+                                    placeholder="enter task" />
+                                <button className="btn btn-info ml-2" type="submit"> add </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+
+                    <Row classes="justify-content-center profile-row">
+                        <Col size="sm-12" spacing="text-center">
+                            <TodoItems entries={this.state.items}
+                                delete={this.deleteItem} />
+                        </Col>
+                    </Row>
+                </Container>
+                <BgImage />
             </div>
 
 
