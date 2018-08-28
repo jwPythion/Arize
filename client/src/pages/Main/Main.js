@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Nav from '../../components/UI';
 import { Row, Col } from '../../components/Grid'
 import { BgImage, MainContainer, IndexBtn } from '../../components/Main';
+import Nav from '../../components/UI';
 import Quote from '../../components/Main/Quote';
 import AuthService from '../../components/AuthService';
 import './Main.css';
@@ -22,6 +22,7 @@ class Main extends Component {
   componentDidMount() {
     if (!this.Auth.loggedIn()) {
       this.props.history.replace('/welcome');
+      return;
     }
 
     if (sessionStorage.getItem('playIntro')) {

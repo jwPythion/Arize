@@ -19,7 +19,7 @@ class Signup extends Component {
     email: "",
     password: "",
     location: "",
-    img:""
+    img:null
   }
 
   componentWillMount() {
@@ -30,7 +30,8 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password, this.state.location, this.state.img)
+    const img = this.state.img || "/assets/img/test-profile3.jpg"
+    API.signUpUser(this.state.first, this.state.last, this.state.email, this.state.password, this.state.location, img)
       .then(res => {
         console.log(res.data);
         // once the user has signed up

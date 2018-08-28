@@ -82,7 +82,7 @@ class Welcome extends Component {
 
                     {/* <!-- Header --> */}
                     <header id="header" className={this.state.headclass}>
-                        <h1><a onClick={this.scrollToTop}>Spectral</a></h1>
+                        <h1><a onClick={this.scrollToTop}><img src="/assets/img/logo-white.png" className="h-100"/></a></h1>
                         <nav id="nav">
                             <ul>
                                 <li className="special">
@@ -90,11 +90,9 @@ class Welcome extends Component {
                                     <div id="menu">
                                         <a className="close" onClick={this.menuClose}></a>
                                         <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="generic.html">Generic</a></li>
-                                            <li><a href="elements.html">Elements</a></li>
-                                            <li><a href="#">Sign Up</a></li>
-                                            <li><a href="#">Log In</a></li>
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="/signup">Sign Up</a></li>
+                                            <li><a href="/login">Log In</a></li>
                                         </ul>
 
                                     </div>
@@ -106,12 +104,13 @@ class Welcome extends Component {
                     {/* <!-- Banner --> */}
                     <section id="banner">
                         <div className="inner">
-                            <h2>Spectral</h2>
-                            <p>Another fine responsive<br />
-                                site template freebie<br />
-                                crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+                            <h2><img src="/assets/img/logo-white.png"/></h2>
+                            <p>Connect to your community<br />
+                                step into your world<br />
+                                enjoy your life</p>
                             <ul className="actions special">
-                                <li><a href="#" className="button primary">Activate</a></li>
+                                <li><a href="/signup" className="button primary">Sign Up</a></li>
+                                <li><a href="/login" className="button fit">Log In</a></li>
                             </ul>
                         </div>
                         <Link to="one" spy={true} smooth={"easeInOutCubic"} duration={1500}>
@@ -124,15 +123,15 @@ class Welcome extends Component {
                     <section id="one" className="wrapper style1 special">
                         <div className="inner">
                             <header className="major">
-                                <h2>Arcu aliquet vel lobortis ata nisl<br />
-                                    eget augue amet aliquet nisl cep donec</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-                                    fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                                <h2>In our modern world it is sometimes <br />
+                                difficult to connect</h2>
+                                <p>What if there were an app that helped you to manage your life<br />
+                                    and also helped to connect you to your community?  </p>
                             </header>
                             <ul className="icons major">
-                                <li><span className="icon fa-diamond major style1"><span className="label">Lorem</span></span></li>
+                                <li><span className="icon fa-sun major style1"><span className="label">Lorem</span></span></li>
                                 <li><span className="icon fa-heart-o major style2"><span className="label">Ipsum</span></span></li>
-                                <li><span className="icon fa-code major style3"><span className="label">Dolor</span></span></li>
+                                <li><span className="icon fa-users major style3"><span className="label">Dolor</span></span></li>
                             </ul>
                         </div>
                     </section>
@@ -140,24 +139,24 @@ class Welcome extends Component {
                     {/* <!-- Two --> */}
                     <section id="two" className="wrapper alt style2">
                         <section className="spotlight">
-                            <div className="image"><img src="/assets/images/pic01.jpg" alt="" /></div><div className="content">
-                                <h2>Magna primis lobortis<br />
-                                    sed ullamcorper</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                            <div className="image"><img src="/assets/img/quote-page.jpg" alt="" /></div><div className="content">
+                                <h2>Inspirational Quotes<br />
+                                    & Stunning Backgrounds</h2>
+                                <p>Arize app opens with a brand new inspirational quote and beautiful scenic backdrop every time you visit.  Creating a new experience every time.</p>
                             </div>
                         </section>
                         <section className="spotlight">
-                            <div className="image"><img src="/assets/images/pic02.jpg" alt="" /></div><div className="content">
-                                <h2>Tortor dolore feugiat<br />
-                                    elementum magna</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                            <div className="image"><img src="/assets/img/main-page.jpg" alt="" /></div><div className="content">
+                                <h2>Intuitive UI<br />
+                                    Exquisite UX</h2>
+                                <p>Why should you need a tutorial just to use your app?  Arize is easy to navigate with large friendly buttons and an interface so simple anyone can use it.</p>
                             </div>
                         </section>
                         <section className="spotlight">
-                            <div className="image"><img src="/assets/images/pic03.jpg" alt="" /></div><div className="content">
-                                <h2>Augue eleifend aliquet<br />
-                                    sed condimentum</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                            <div className="image"><img src="/assets/img/weather-page.jpg" alt="" /></div><div className="content">
+                                <h2>Tools you can use<br />
+                                    Activities you'll enjoy</h2>
+                                <p>Tools like weather, to do list, and a Calendar.  Connection with groups and search for events in your area.  With Arize, you only get stuff you need.</p>
                             </div>
                         </section>
                     </section>
@@ -166,34 +165,34 @@ class Welcome extends Component {
                     <section id="three" className="wrapper style3 special">
                         <div className="inner">
                             <header className="major">
-                                <h2>Accumsan mus tortor nunc aliquet</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-                                    fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                                <h2>Only the best tools with Arize</h2>
+                                <p>Our developers put only the best tools into Arize to gain better<br />
+                                    utility and user enjoyment.</p>
                             </header>
                             <ul className="features">
-                                <li className="icon fa-paper-plane-o">
-                                    <h3>Arcu accumsan</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-sun">
+                                    <h3>Weather</h3>
+                                    <p>How can you get out in the world without knowing how to prepare?  Find out what's happening outside so you can put on your best and get out there!</p>
                                 </li>
-                                <li className="icon fa-laptop">
-                                    <h3>Ac Augue Eget</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-calendar-alt">
+                                    <h3>Calendar</h3>
+                                    <p>Not sure what your day is like?  Who are you meeting?  What do you have planned?  Arize syncs to your calendar to keep you in the know about what's happening.</p>
                                 </li>
-                                <li className="icon fa-code">
-                                    <h3>Mus Scelerisque</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-ticket-alt">
+                                    <h3>Events</h3>
+                                    <p>Want to get out but don't know what's going on?  Find out!  Search for Events happening near you!  Choose anything you like: movies, music, fairs, anything!</p>
                                 </li>
-                                <li className="icon fa-headphones">
-                                    <h3>Mauris Imperdiet</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-list-alt">
+                                    <h3>To Do List</h3>
+                                    <p>Have things to do?  Make a list!  Set up your to do list inside the app and get never lose track of things!</p>
                                 </li>
-                                <li className="icon fa-heart-o">
-                                    <h3>Aenean Primis</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-users">
+                                    <h3>Groups</h3>
+                                    <p>Want to meet people in your community?  Create a group based on your interest and meet others.  Or see what other groups near you have going on!</p>
                                 </li>
-                                <li className="icon fa-flag-o">
-                                    <h3>Tortor Ut</h3>
-                                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                                <li className="icon fa-heart">
+                                    <h3>Reminders <br/>*Coming Soon</h3>
+                                    <p>Get reminded of events, or group activities near you with Reminders!</p>
                                 </li>
                             </ul>
                         </div>
@@ -203,11 +202,11 @@ class Welcome extends Component {
                     <section id="cta" className="wrapper style4">
                         <div className="inner">
                             <header>
-                                <h2>Arcue ut vel commodo</h2>
-                                <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+                                <h2>Connect to your World</h2>
+                                <p>Don't spend your life disconnected.  Sign up today to find out everything Arize has to offer.</p>
                             </header>
                             <ul className="actions stacked">
-                                <li><a href="#" className="button fit primary">Activate</a></li>
+                                <li><a href="/signup" className="button fit primary">Sign Up</a></li>
                                 <li><a href="#" className="button fit">Learn More</a></li>
                             </ul>
                         </div>
@@ -223,7 +222,7 @@ class Welcome extends Component {
                             <li><a href="#" className="icon fa-envelope-o"><span className="label">Email</span></a></li>
                         </ul>
                         <ul className="copyright">
-                            <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            <li>&copy; Arize</li><li>Authors: Kimberly Cooper, Connor Hysham, Jaymes Johnson, Andia Katz</li>
                         </ul>
                     </footer>
 
