@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Input, FormBtn } from '../Form';
 import { Container, Row, Col } from '../Grid';
 import { BgImage } from '../Main';
@@ -52,53 +51,58 @@ class Groups extends Component {
             <div className="groups">
                 <Container fluid>
                     <BackBtn />
-                    <Row>
-                        <div className="tableCont">
-                            <Col size="lg-7 xl-6" spacing="text-center p-4"><strong>Groups you are a part of:</strong><br /><br />
-                                {this.state.groups.map(group => {
-                                    return (<table className="table">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Group name:</th>
-                                                <td>{group.name}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Group description:</th>
-                                                <td>{group.description}</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Users in this group:</th>
-                                                <td>{group.users.name}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>)
-                                })}
-                            </Col>
+
+                    <div className="card weather-title text-center p-4">
+                        <h1 className="card-title pl-4"><strong>Create a new group!</strong></h1>
+                        <div className="card-body">
+                            <form className="w-100">
+                                <Input
+                                    value={this.state.name}
+                                    onChange={this.handleInputChange}
+                                    name="name"
+                                    type="text"
+                                    placeholder="Group Name:"
+                                    fullwidth="input-full"
+                                />
+                                <Input
+                                    value={this.state.description}
+                                    onChange={this.handleInputChange}
+                                    name="description"
+                                    type="text"
+                                    placeholder="Group Description"
+                                    fullwidth="input-full"
+                                />
+                                <FormBtn
+                                    onClick={this.handleFormSubmit}
+                                >Search</FormBtn>
+                            </form>
+
                         </div>
-                        <form className="profile-row bg-light p-5"> Create a new group!<br /><br />
-                            <Input
-                                value={this.state.name}
-                                onChange={this.handleInputChange}
-                                name="name"
-                                label="Group Name:"
-                                type="text"
-                                placeholder="Group"
-                            />
-                            <Input
-                                value={this.state.description}
-                                onChange={this.handleInputChange}
-                                name="description"
-                                label="Description of the group:"
-                                type="text"
-                                placeholder="Group Description"
-                            />
-                            <FormBtn
-                                onClick={this.handleFormSubmit}
-                            >
-                                Submit
-              </FormBtn>
-                        </form>
+                    </div>
+                    <Row classes="justify-content-center profile-row">
+                        <Col size="lg-7" spacing="text-center bg-light">
+                            <strong>Groups you are a part of:</strong>
+                        </Col>
+                        <Col size="lg-7" spacing="text-center bg-light">
+                            {this.state.groups.map(group => {
+                                return (<table className="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Group name:</th>
+                                            <td>{group.name}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Group description:</th>
+                                            <td>{group.description}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>)
+                            })}
+                        </Col>
                     </Row>
+
+
+
                 </ Container>
                 <BgImage />
             </div>

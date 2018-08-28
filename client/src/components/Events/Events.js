@@ -18,6 +18,14 @@ class Events extends Component {
         loading: false
     };
 
+    componentDidMount() {
+        API.getUser(this.props.user.id).then(res => {
+            this.setState({
+                location: res.data.location,
+            });
+        });
+    }
+
     searchEvents = (eventType, location) => {
         this.setState({ loading: true })
         API.getEvent(eventType, location)
@@ -56,7 +64,7 @@ class Events extends Component {
             <div className="events">
                 <Container fluid>
                     <BackBtn />
-
+ 
                     <div className="card weather-title text-center p-4">
                         <h1 className="card-title pl-4"><strong>Search for events near you!</strong></h1>
                         <div className="card-body">

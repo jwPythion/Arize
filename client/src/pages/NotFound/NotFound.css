@@ -2,7 +2,7 @@
 
 .fourOhFour h1 {
     color: #fff;
-    font-size: 12em;
+    font-size: 8em;
     font-weight: bold;
     font-family: Helvetica;
     text-align: center;
@@ -20,7 +20,3 @@
     0 20px 20px rgba(0,0,0,.15);
     }
     
-    
-    body {
-      background-color: #f1f1f1;
-    }
